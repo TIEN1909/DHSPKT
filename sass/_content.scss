@@ -1,0 +1,118 @@
+.content{
+    display: grid;
+    grid-template-columns: 65% 35%;
+    &__left{    
+        // background-color: green;
+        position: relative;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+        ::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: rgb(228, 220, 220);
+            height: 70%;
+            width: 2px;
+            // opacity: 0.4;
+        }
+        &-wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: 10px 0;
+        }
+        &>img{
+            width: 100%;
+            height: 600px;
+        }
+    }
+    span{
+        line-height: 1.5;
+    }
+    &__right{
+        // background-color: yellow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &>h2{
+            width: 95%;
+            background-color: #d1d4d8;
+            padding: 10px;
+        }
+        &-image{
+            width: 300px;
+            height: 300px;
+            margin-bottom: 40px;
+        }
+    }
+    &__event-item{
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        gap: 0 10px;
+        margin-left: 5px;
+        padding: 10px;
+        border-bottom: 1px solid rgb(228, 220, 220);
+        &-new{
+            text-align: center;
+            width: 40%;
+            font-size: 12px;
+            padding: 4px 10px;
+            border: 1px solid rgb(228, 220, 220);
+        }
+        &-img{
+            height: 100px;
+            width: 170px;
+          
+        }
+        &-desc{
+            &>span{
+                font-size: 14px;
+            }
+        }
+    }
+}
+.button__cmt{
+    margin-top: 20px;
+    float: right;
+    border: 1px solid transparent;
+    transition: all 450ms ease;
+    &:hover{
+        background-color: transparent;
+        border: 1px solid #0A4181;
+        color: #0A4181;
+    }
+}
+.infos{
+    padding: 20px;
+}
+.info{
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    &__contact{
+        margin-bottom: 20px;
+    }
+}
+@include maxw(1023px) {
+   .content{
+         grid-template-columns: 100%;
+         &__event-item{
+            justify-content: flex-start;
+         }
+   }
+  }
+  @include maxw(767px) {
+    .content{
+        &__right{
+            margin-top: 40px;
+        }
+        &__left{
+            &>img{
+                height: 310px;
+            }
+        }
+    }
+  }

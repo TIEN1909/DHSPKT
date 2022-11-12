@@ -1,0 +1,37 @@
+.footer{
+    background-color: #0A4181;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
+    margin-top: 40px;
+    &__list{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 15px 0;
+    }
+    &__item{
+        color: white;
+    }
+}
+.bottom{
+    background-color: #0A4181;
+    text-align: center;
+    color: white;
+    border-top: 1px solid  rgb(228, 220, 220);
+    padding: 20px 0;
+}
+@include maxw(1023px) {
+    .footer{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 50px 0;
+        padding-left: 50px;
+    }
+   }
+   @include maxw(767px) {
+    .footer{
+        grid-template-columns: repeat(1,1fr);
+    }
+   }

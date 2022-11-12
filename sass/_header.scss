@@ -1,0 +1,121 @@
+.header{
+    &__menu{
+        &-bars{
+            display: none !important;
+        }
+        &-list{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0A4181;
+        }
+        &-item{
+            width: 100%;
+            color: white;
+            padding: 20px 10px;
+            border-right: 1px solid white;
+            width: 200px;
+            text-align: center;
+            transition: all 450ms ease;
+            font-size: 15px;
+            font-weight: 700;
+            :after{
+                content: "";
+                position: absolute;
+                background-color: #ff3c78;
+                height: 3px;
+                width: 0;
+                left: 0;
+                top: 0;
+                transition: 0.3s;
+            }
+            &:hover{
+                color:#0A4181;
+                background-color:  white;
+            }
+            &:hover:after{ 
+                width: 100%;
+            }
+        }
+        &-iteme{
+            border-right: none;
+        }
+    }
+}
+.close{
+    display: none !important;
+}
+.date >span{
+    float: right;
+}
+.title{
+    margin-bottom: 20px;
+    border-bottom: 1px solid  rgb(228, 220, 220);
+    &>h1{
+        margin-left: 30px;
+        letter-spacing:1.5px;
+        padding: 20px 10px;
+        white-space: 3px;
+        line-height: 1.2;
+        // border-left: 5px solid red;
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            top: 22px;
+            left: 0;
+            height: 50%;
+            width: 5px;
+            background-color: red;
+        }
+    }
+}
+@include maxw(1023px) {
+    .header{
+        &__menu{
+            width: 100%;
+            height: 100%;
+            &-bars{
+
+                display: block;
+                font-size: 40px;
+                padding: 10px;
+                position: relative;
+            }
+            &-list{
+                // display: none;
+                position: absolute;
+                justify-content: flex-start;
+                width: 50%;
+                height: 100%;
+                flex-direction: column;
+                z-index: 99;
+                transform: translateX(-100%);
+                transition: all 450ms ease;
+            }
+            &-item{
+                border-right:none;
+                border-bottom: 1px solid rgb(228, 220, 220);
+            }
+        }
+    }
+    .close{
+        font-size: 40px;
+        color: white;
+        margin-left: 80%;
+        padding: 10px;
+
+    }
+    .is-active{
+        transform: translateX(0);
+    }
+  }
+  @include maxw(767px) {
+    .header{
+        &__menu{
+            &-list{
+                width: 70%;
+            }
+        }
+    }
+  }

@@ -1,0 +1,43 @@
+.hero{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 60% 40%;
+    &__video{
+        width: 922px;
+        height: 500px;
+        overflow: hidden;
+        >video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__images{
+       width: 100%;
+       height: 250px;
+    }
+    &__image{
+       object-fit: cover;
+       height: 100%;
+       width: 100%;
+      
+    }
+}
+@include maxw(1023px) {
+    .hero{
+        &__video{
+            width: 820px;
+        }
+        &__image{
+            display: none;
+        }
+    }
+  }
+  @include maxw(767px) {
+    .hero{
+        &__video{
+            width: 390px;
+            height: 250px;
+        }
+    }
+  }
