@@ -235,8 +235,8 @@ button {
   }
 }
 .hero {
+  width: 100%;
   display: grid;
-  justify-content: space-between;
   grid-template-columns: 60% 40%;
 }
 .hero__video {
