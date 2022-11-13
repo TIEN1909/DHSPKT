@@ -240,7 +240,6 @@ button {
   grid-template-columns: 60% 40%;
 }
 .hero__video {
-  width: 911px;
   height: 500px;
   overflow: hidden;
 }
